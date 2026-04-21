@@ -28,8 +28,8 @@ Protected Module WiiHelper
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function GetWiiResetCode(confirmationNumber As String, datePrefix As String) As String
-		  Var fullNum As String = datePrefix + confirmationNumber.Middle(4, 4)
+		Function GetWiiResetCode(confNum As String, datePrefix As String) As String
+		  Var fullNum As String = datePrefix + confNum.Middle(4, 4)
 		  Var crc As UInt64 = Crc32(fullNum)
 		  Var code As UInt64 = (Bitwise.BitXor(crc, &hAAAA) + &h14C1) Mod 100000
 		  Return Format(code, "00000")

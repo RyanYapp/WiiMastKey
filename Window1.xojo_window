@@ -11,7 +11,7 @@ Begin DesktopWindow Window1
    HasMaximizeButton=   True
    HasMinimizeButton=   True
    HasTitleBar     =   True
-   Height          =   169
+   Height          =   170
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -24,18 +24,18 @@ Begin DesktopWindow Window1
    Title           =   "WiiMastKey"
    Type            =   0
    Visible         =   True
-   Width           =   279
+   Width           =   280
    Begin DesktopButton btn_Calc
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
-      Caption         =   "Get Reset Code"
+      Caption         =   "Generate Master Key"
       Default         =   True
       Enabled         =   False
       FontName        =   "System"
       FontSize        =   14.0
       FontUnit        =   0
-      Height          =   22
+      Height          =   23
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -45,7 +45,7 @@ Begin DesktopWindow Window1
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      MacButtonStyle  =   0
+      MacButtonStyle  =   4
       Scope           =   0
       TabIndex        =   0
       TabPanelIndex   =   0
@@ -55,7 +55,7 @@ Begin DesktopWindow Window1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   239
+      Width           =   240
    End
    Begin DesktopTextField tf_ConfNum
       AllowAutoDeactivate=   True
@@ -74,7 +74,7 @@ Begin DesktopWindow Window1
       Hint            =   ""
       Index           =   -2147483648
       Italic          =   False
-      Left            =   168
+      Left            =   170
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
@@ -96,14 +96,14 @@ Begin DesktopWindow Window1
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   91
+      Width           =   90
    End
    Begin DesktopLabel lbl_Result
       AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
       FontName        =   "System"
-      FontSize        =   14.0
+      FontSize        =   15.0
       FontUnit        =   0
       Height          =   20
       Index           =   -2147483648
@@ -124,11 +124,11 @@ Begin DesktopWindow Window1
       TextAlignment   =   2
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   94
+      Top             =   95
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   180
+      Width           =   187
    End
    Begin DesktopLabel lbl_Warn
       AllowAutoDeactivate=   True
@@ -156,11 +156,11 @@ Begin DesktopWindow Window1
       TextAlignment   =   2
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   129
+      Top             =   130
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   239
+      Width           =   240
    End
    Begin DesktopLabel lbl_ConfNum
       AllowAutoDeactivate=   True
@@ -202,13 +202,13 @@ Begin DesktopWindow Window1
       Default         =   True
       Enabled         =   False
       FontName        =   "System"
-      FontSize        =   12.0
+      FontSize        =   11.0
       FontUnit        =   0
       Height          =   20
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   209
+      Left            =   220
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
@@ -220,11 +220,11 @@ Begin DesktopWindow Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   94
-      Transparent     =   False
+      Top             =   95
+      Transparent     =   True
       Underline       =   False
       Visible         =   True
-      Width           =   50
+      Width           =   40
    End
 End
 #tag EndDesktopWindow
@@ -266,8 +266,13 @@ End
 	#tag Event
 		Function KeyDown(key As String) As Boolean
 		  If key = Chr(13) And Me.Text.Length = 8 Then
-		    btn_Calc.Press
+		    
+		    If lbl_Result.Text = "" Then
+		      btn_Calc.Press
+		    End If
+		    
 		    Return True
+		    
 		  End If
 		  
 		  If IsNumeric(key) Then
