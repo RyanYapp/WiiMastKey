@@ -1,5 +1,5 @@
 #tag DesktopWindow
-Begin DesktopWindow Window1
+Begin DesktopWindow winMain
    Backdrop        =   0
    BackgroundColor =   &cFFFFFF
    Composite       =   False
@@ -8,10 +8,10 @@ Begin DesktopWindow Window1
    HasBackgroundColor=   False
    HasCloseButton  =   True
    HasFullScreenButton=   False
-   HasMaximizeButton=   True
+   HasMaximizeButton=   False
    HasMinimizeButton=   True
    HasTitleBar     =   True
-   Height          =   170
+   Height          =   155
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -20,11 +20,11 @@ Begin DesktopWindow Window1
    MenuBarVisible  =   False
    MinimumHeight   =   64
    MinimumWidth    =   64
-   Resizeable      =   True
+   Resizeable      =   False
    Title           =   "WiiMastKey"
    Type            =   0
    Visible         =   True
-   Width           =   280
+   Width           =   290
    Begin DesktopButton btn_Calc
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -55,7 +55,7 @@ Begin DesktopWindow Window1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   240
+      Width           =   250
    End
    Begin DesktopTextField tf_ConfNum
       AllowAutoDeactivate=   True
@@ -84,7 +84,7 @@ Begin DesktopWindow Window1
       Password        =   False
       ReadOnly        =   False
       Scope           =   0
-      TabIndex        =   1
+      TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
       Text            =   ""
@@ -96,14 +96,14 @@ Begin DesktopWindow Window1
       Underline       =   False
       ValidationMask  =   ""
       Visible         =   True
-      Width           =   90
+      Width           =   100
    End
    Begin DesktopLabel lbl_Result
       AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
       FontName        =   "System"
-      FontSize        =   15.0
+      FontSize        =   14.0
       FontUnit        =   0
       Height          =   20
       Index           =   -2147483648
@@ -128,9 +128,41 @@ Begin DesktopWindow Window1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   187
+      Width           =   250
+      Begin DesktopButton btn_Copy
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Copy"
+         Default         =   True
+         Enabled         =   False
+         FontName        =   "System"
+         FontSize        =   11.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "lbl_Result"
+         Italic          =   False
+         Left            =   230
+         LockBottom      =   False
+         LockedInPosition=   True
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   95
+         Transparent     =   True
+         Underline       =   False
+         Visible         =   True
+         Width           =   40
+      End
    End
-   Begin DesktopLabel lbl_Warn
+   Begin DesktopLabel lbl_Details
       AllowAutoDeactivate=   True
       Bold            =   False
       Enabled         =   True
@@ -152,7 +184,7 @@ Begin DesktopWindow Window1
       TabIndex        =   4
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Note: Your Wii's date must be correct"
+      Text            =   ""
       TextAlignment   =   2
       TextColor       =   &c00000000
       Tooltip         =   ""
@@ -160,7 +192,38 @@ Begin DesktopWindow Window1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   240
+      Width           =   250
+      Begin DesktopDisclosureTriangle dt_Detail
+         Active          =   False
+         AllowAutoDeactivate=   True
+         AllowFocus      =   False
+         AllowTabStop    =   True
+         Enabled         =   True
+         FacingDirection =   1
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "lbl_Details"
+         Left            =   179
+         LockBottom      =   False
+         LockedInPosition=   True
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         PanelIndex      =   0
+         Scope           =   0
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         Tooltip         =   ""
+         Top             =   130
+         Transparent     =   True
+         Value           =   False
+         Visible         =   False
+         Width           =   18
+         _mIndex         =   0
+         _mInitialParent =   ""
+         _mName          =   ""
+         _mPanelIndex    =   0
+      End
    End
    Begin DesktopLabel lbl_ConfNum
       AllowAutoDeactivate=   True
@@ -194,37 +257,77 @@ Begin DesktopWindow Window1
       Visible         =   True
       Width           =   138
    End
-   Begin DesktopButton btn_Copy
+   Begin DesktopTextArea ta_Details
       AllowAutoDeactivate=   True
+      AllowFocusRing  =   False
+      AllowSpellChecking=   True
+      AllowStyledText =   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
       Bold            =   False
-      Cancel          =   False
-      Caption         =   "Copy"
-      Default         =   True
-      Enabled         =   False
+      Enabled         =   True
       FontName        =   "System"
-      FontSize        =   11.0
+      FontSize        =   0.0
       FontUnit        =   0
+      Format          =   ""
+      HasBorder       =   True
+      HasHorizontalScrollbar=   False
+      HasVerticalScrollbar=   True
+      Height          =   190
+      HideSelection   =   True
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   0
+      LineHeight      =   0.0
+      LineSpacing     =   1.0
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumCharactersAllowed=   0
+      Multiline       =   True
+      ReadOnly        =   True
+      Scope           =   0
+      TabIndex        =   9
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextAlignment   =   0
+      TextColor       =   &c000000
+      Tooltip         =   ""
+      Top             =   155
+      Transparent     =   False
+      Underline       =   False
+      UnicodeMode     =   1
+      ValidationMask  =   ""
+      Visible         =   True
+      Width           =   290
+   End
+   Begin DesktopCanvas Canv_Info
+      AllowAutoDeactivate=   True
+      AllowFocus      =   False
+      AllowFocusRing  =   True
+      AllowTabs       =   False
+      Backdrop        =   0
+      Enabled         =   True
       Height          =   20
       Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   220
+      Left            =   268
       LockBottom      =   False
       LockedInPosition=   True
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      MacButtonStyle  =   0
       Scope           =   0
-      TabIndex        =   7
+      TabIndex        =   10
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   95
+      Top             =   133
       Transparent     =   True
-      Underline       =   False
       Visible         =   True
-      Width           =   40
+      Width           =   20
    End
 End
 #tag EndDesktopWindow
@@ -233,13 +336,20 @@ End
 	#tag Event
 		Sub Opening()
 		  Var now As New Date
-		  DateValue = Format(now.Month, "00") + Format(now.Day, "00")
+		  dateValue = Format(now.Month, "00") + Format(now.Day, "00")
+		  dateUsed = Format(now.Day, "00") + "/" + Format(now.Month, "00")
+		  
+		  If TargetMacOS Then btn_Copy.Width = 45
 		End Sub
 	#tag EndEvent
 
 
 	#tag Property, Flags = &h0
-		DateValue As String
+		dateUsed As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		dateValue As String
 	#tag EndProperty
 
 
@@ -249,9 +359,25 @@ End
 	#tag Event
 		Sub Pressed()
 		  lbl_Result.Text = ""
-		  Var result As String = WiiHelper.GetWiiResetCode(tf_ConfNum.Text.Trim, DateValue)
+		  Var result As String = WiiHelper.GetWiiResetCode(tf_ConfNum.Text.Trim, dateValue)
 		  lbl_Result.Text = "Your master key: " + result
+		  lbl_Details.Text = "Show details"
+		  Me.Enabled = False
+		  dt_Detail.Visible = True
 		  btn_Copy.Enabled = True
+		  
+		  Var ConfNumUsed As String = tf_ConfNum.Text.Trim.Middle(4, 4)
+		  
+		  ta_Details.Text = _
+		  "Date used: " + dateUsed + " (" + dateValue + ")" + EndOfLine + _
+		  "Confirmation number digits used: " + ConfNumUsed +  EndOfLine + _
+		  "Concatenated string: " + dateValue + " & " + ConfNumUsed + " = " + WiiHelper.fullString + EndOfLine + EndOfLine + _
+		  "Step 1 - CRC32 output: " + WiiHelper.afterCRC.ToString + EndOfLine + _
+		  "Step 2 - XOR 43690: " + WiiHelper.afterXOR.ToString + EndOfLine + _
+		  "Step 3 - Add 5313: " + WiiHelper.afterAdd.ToString + EndOfLine + _
+		  "Step 4 - Modulo 100000 : " + WiiHelper.afterModulo.ToString + EndOfLine + EndOfLine + _
+		  "Master key: " + result + EndOfLine + EndOfLine + _
+		  "⚠️ The Wii's date must match the date shown above."
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -259,6 +385,10 @@ End
 	#tag Event
 		Sub TextChanged()
 		  lbl_Result.Text = ""
+		  lbl_Details.Text = ""
+		  ta_Details.Text = ""
+		  dt_Detail.Visible = False
+		  winMain.Height = 155
 		  btn_Copy.Enabled = False
 		  btn_Calc.Enabled = (Me.Text.Length = 8)
 		End Sub
@@ -291,6 +421,59 @@ End
 		  Var c As New Clipboard
 		  c.Text = lbl_Result.Text.Right(5)
 		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events dt_Detail
+	#tag Event
+		Sub MouseEnter()
+		  Me.MouseCursor = System.Cursors.FingerPointer
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  Me.MouseCursor = Nil
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub ValueChanged()
+		  If IsContextualClick = False Then
+		    If winMain.Height = 155 Then
+		      winMain.Height = 345
+		    Else
+		      winMain.Height = 155
+		    End If
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Canv_Info
+	#tag Event
+		Sub MouseEnter()
+		  Me.MouseCursor = System.Cursors.FingerPointer
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub MouseExit()
+		  Me.MouseCursor = Nil
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Sub Paint(g As Graphics, areas() As Rect)
+		  g.DrawingColor = Color.RGB(0, 120, 215)
+		  g.FillRoundRectangle(0, 0, me.Width, me.Height, 4, 4)
+		  g.DrawingColor = Color.White
+		  g.Bold = True
+		  
+		  Var textX As Integer = (me.Width - g.TextWidth("i")) / 2
+		  Var textY As Integer = ((me.Height - g.TextHeight) / 2) + g.FontAscent
+		  
+		  g.DrawText("i", textX, textY)
+		End Sub
+	#tag EndEvent
+	#tag Event
+		Function MouseDown(x As Integer, y As Integer) As Boolean
+		  winAbout.ShowModal(winMain)
+		End Function
 	#tag EndEvent
 #tag EndEvents
 #tag ViewBehavior
@@ -538,7 +721,15 @@ End
 		EditorType=""
 	#tag EndViewProperty
 	#tag ViewProperty
-		Name="DateValue"
+		Name="dateValue"
+		Visible=false
+		Group="Behavior"
+		InitialValue=""
+		Type="String"
+		EditorType="MultiLineEditor"
+	#tag EndViewProperty
+	#tag ViewProperty
+		Name="dateUsed"
 		Visible=false
 		Group="Behavior"
 		InitialValue=""
